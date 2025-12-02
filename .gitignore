@@ -218,3 +218,6 @@ __marimo__/
 # Agents
 AGENTS.md
 CLAUDE.md
+
+# Logs
+logs/
