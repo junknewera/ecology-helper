@@ -1,0 +1,14 @@
+services:
+  mental-helper:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./logs:/app/logs
+      - hf_cache:/root/.cache/huggingface
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+volumes:
+  hf_cache:
