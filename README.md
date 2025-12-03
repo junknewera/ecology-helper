@@ -88,6 +88,7 @@ mental-helper/
 ├── data/
 │   ├── qa_dataset.json         # 172 пары вопрос-ответ
 │   └── e5_index.pt             # Предвычисленные эмбеддинги
+├── app.ipynb                   # Интерактивный ноутбук для тестирования
 ├── notebooks/
 │   ├── preprocess_data.ipynb   # Парсинг данных из HuggingFace
 │   ├── rag.ipynb               # Тестирование RAG
@@ -180,6 +181,14 @@ mental-helper/
 
 ## Разработка
 
+### Тестирование
+
+Запустить ноутбук `app.ipynb`
+
+Используйте функцию `answer(query, rag_enabled=True)` для тестирования:
+
+- `rag_enabled=True` — с контекстом из базы знаний
+- `rag_enabled=False` — baseline (без RAG)
 
 ### Docker команды
 
