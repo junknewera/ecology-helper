@@ -20,4 +20,7 @@ dependencies = [
     "llama-cpp-python>=0.3.16",
     "huggingface-hub>=0.36.0",
     "streamlit>=1.51.0",
+    "rouge-score>=0.1.2",
+    "nltk>=3.9.2",
+    "evaluate>=0.4.6",
 ]

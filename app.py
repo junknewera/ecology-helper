@@ -6,7 +6,7 @@ from src.rag_pipeline import RagPipeline
 from src.generator import QwenGenerator
 
 
-@st.cache_resource
+@st.cache_resource(show_spinner=False)
 def load_models():
     rag = RagPipeline()
     generator = QwenGenerator()
@@ -32,9 +32,10 @@ def log_interaction(query, answer, use_rag, sources=None):
 
 def main():
     st.title("Mental Health Assistant")
-    st.markdown("Ask questions about mental health and get evidence-based advice.")
+    st.markdown("Ask questions about mental health and get advice.")
 
-    rag, generator = load_models()
+    with st.spinner("Loading models... This may take a few minutes on first run."): 
+        rag, generator = load_models()
 
     query = st.text_input("Your question:", placeholder="How to cope with stress?")
     use_rag = st.checkbox("Use RAG (retrieval)", value=True)
