@@ -15,7 +15,7 @@ class QwenGenerator:
             model_path=model_path, n_ctx=n_ctx, n_threads=n_threads, verbose=False
         )
 
-    def generate(self, query, context="", max_tokens=256, temperature=0.7, top_p=0.9):
+    def generate(self, query, context="", max_tokens=128, temperature=0.7, top_p=0.9):
         if context:
             prompt = f"""<|im_start|>system
 You are a mental health assistant. Provide 4-6 clear, actionable points. Be specific and encouraging.<|im_end|>
