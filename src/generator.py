@@ -63,9 +63,9 @@ class QwenGenerator:
         if context:
             # RAG режим: используем найденные документы как контекст
             system_msg = (
-                "You are a mental health assistant. "
-                "Provide 4-6 clear, actionable points. "
-                "Be specific and encouraging."
+                "You are a climate science expert. "
+                "Answer questions based on the provided context. "
+                "Be accurate, scientific, and clear."
             )
             prompt = f"""<|im_start|>system
 {system_msg}<|im_end|>
@@ -79,9 +79,9 @@ Question: {query}<|im_end|>
         else:
             # Baseline режим: генерация без контекста
             system_msg = (
-                "You are a mental health assistant. "
-                "Provide 4-6 clear, actionable points. "
-                "Be specific and encouraging."
+                "You are a climate science expert. "
+                "Answer climate and environmental questions. "
+                "Be accurate and scientific."
             )
             prompt = f"""<|im_start|>system
 {system_msg}<|im_end|>
