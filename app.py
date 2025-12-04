@@ -59,15 +59,22 @@ def log_interaction(
 
 def main() -> None:
     """Основная функция Streamlit приложения."""
-    st.title("Mental Health Assistant")
-    st.markdown("Ask questions about mental health and get advice.")
+    st.title("Climate Q&A Assistant")
+    st.markdown(
+        "Ask questions about climate, global warming, and environmental topics."
+    )
 
     # Загружаем модели (один раз благодаря кэширования)
-    with st.spinner("Loading models... This may take a few minutes on first run."):
+    with st.spinner(
+        "Loading models... This may take a few minutes on first run."
+    ):
         rag, generator = load_models()
 
     # UI элементы
-    query = st.text_input("Your question:", placeholder="How to cope with stress?")
+    query = st.text_input(
+        "Your question:",
+        placeholder="What is climate change? How do greenhouse gases work?",
+    )
     use_rag = st.checkbox("Use RAG (retrieval)", value=True)
 
     # Инициализируем session state для хранения последнего ответа
